@@ -1,14 +1,23 @@
-defmodule MedirmGraphQlApiWeb.Schema
+defmodule MedirmGraphQlApiWeb.Schema do
   use Absinthe.Schema
   
+  alias MedirmGraphQlApiWeb.Resolvers
   # import Types
+  import_types(MedirmGraphQlApiWeb.Schema.Types)
 
-  def query do
+  @doc """
+  Get a list of all users
+  """
+  query do
+    field :users, list_of(:user_type) do
+      # Resolver
+      resolve(&Resolvers.UserResolver.users/3)
+    end
   end
 
-  # def mutarion do
+  # mutarion do
   # end
 
-  # def subscription do
+  # subscription do
   # end
 end
