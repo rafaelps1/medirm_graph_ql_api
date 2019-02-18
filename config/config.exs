@@ -25,6 +25,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Guardian config details
+config :medirm_graph_ql_api, MedirmGraphQlApi.Guardian,
+       issuer: "medirm_graph_ql_api",
+       secret_key: "4uN+dqgJF2l9AWPv6xah0crzmzklS//9b9C7vV4rqIcddsEBgLBCVm4fhFofZLcY"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
