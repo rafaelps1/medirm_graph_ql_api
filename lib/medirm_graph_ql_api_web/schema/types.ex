@@ -4,4 +4,5 @@ defmodule MedirmGraphQlApiWeb.Schema.Types do
   alias MedirmGraphQlApiWeb.Schema.Types
 
   import_types(Types.UserType)
+  import_types(Types.SessionType)
 end
