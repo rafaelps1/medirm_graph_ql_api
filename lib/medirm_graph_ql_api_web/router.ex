@@ -2,7 +2,8 @@ defmodule MedirmGraphQlApiWeb.Router do
   use MedirmGraphQlApiWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
+    plug(MedirmGraphQlApiWeb.Plugs.Context)
   end
 
   scope "/api" do
